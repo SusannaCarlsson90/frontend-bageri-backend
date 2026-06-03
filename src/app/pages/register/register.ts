@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { User } from '../../interfaces/user'; // Lägg till denna!
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './register.html',
   styleUrl: './register.css',
 })
-export class Register { // Denna klass heter Register eftersom det är registreringssidan
+export class Register {
   username: string = "";
   password: string = "";
   message = signal("");
@@ -16,6 +17,14 @@ export class Register { // Denna klass heter Register eftersom det är registrer
   authService = inject(AuthService);
 
   register() : void {
-    // Här lägger du koden från filmen för att anropa din authService sen!
+    const user: User = {
+      username: this.username,
+      password: this.password
+    }
+
+    this.authService.register(user).subscribe({
+      next: (res: any) => this.message.set(res.message || "Konto skapat!"),
+      error: (err) => this.message.set(err.error?.message || "Ett fel uppstod.")
+    });
   }
 }
