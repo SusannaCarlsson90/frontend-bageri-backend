@@ -5,11 +5,13 @@ import { Login } from './pages/login/login';
 import { Om } from './pages/om/om';
 import { Sortiment } from './pages/sortiment/sortiment';
 import { Meny } from './pages/meny/meny';
+import { Register } from './pages/register/register';
 
 export const routes: Routes = [
   { path: "", component: Home},
   { path: "admin", component: Admin },
   { path: "login", component: Login},
+  { path: "register", component: Register },
   { path: "meny", component: Meny},
   { path: "sortiment", component: Sortiment },
   { path: "om", component: Om},

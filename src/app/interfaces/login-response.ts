@@ -1,1 +1,8 @@
-export interface LoginResponse {}
+export interface LoginResponse {
+  response: {
+    message: string;
+    token: string;
+  };
+
+  
+}
