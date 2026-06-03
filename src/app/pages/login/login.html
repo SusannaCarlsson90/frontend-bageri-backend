@@ -1,1 +1,17 @@
 <h2>Logga in</h2>
+
+<form (ngSubmit)="login()">
+  @if (message()) {
+    <div>
+      {{ message() }}
+    </div>
+  }
+
+  <label for="username">Användarnamn</label>
+  <input type="text" id="username" name="username" [(ngModel)]="username">
+
+  <label for="password">Lösenord</label>
+  <input type="password" id="password" name="password" [(ngModel)]="password">
+
+  <button type="submit">Logga in</button>
+</form>

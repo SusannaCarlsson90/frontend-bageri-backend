@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { User } from '../../interfaces/user'; // Lägg till denna!
+import { User } from '../../interfaces/user'; 
 
 @Component({
   selector: 'app-register',
@@ -23,8 +23,12 @@ export class Register {
     }
 
     this.authService.register(user).subscribe({
-      next: (res: any) => this.message.set(res.message || "Konto skapat!"),
-      error: (err) => this.message.set(err.error?.message || "Ett fel uppstod.")
+      next: (res: any) => {
+      this.message.set(res.message || "Konto skapat!"),
+      this.password = "";
+      this.username = "";
+      },
+      error: (err: any) => this.message.set(err.error?.message || "Ett fel uppstod.")
     });
   }
 }
