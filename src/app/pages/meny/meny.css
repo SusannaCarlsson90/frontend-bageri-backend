@@ -70,3 +70,41 @@
   margin: 0;
   line-height: 1.4;
 }
+
+/* --- MOBILANPASSNING FÖR MENYN--- */
+@media (max-width: 768px) {
+  
+  /* Centrerar texten lite mer */
+  .menu-title, .menu-subtitle {
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  /* Gör så att varje dag-sektion (t.ex. Måndag) tar upp hela bredden */
+  .day-section {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  /* Fixar rutan för själva maträtten så den inte blir så extremt smal */
+  .menu-item {
+    width: 100%;
+    max-width: 1000px; /* Tillåter den att sträcka ut sig */
+    box-sizing: border-box;
+    margin: 0 auto 15px auto;
+    padding: 15px; /* Ger texten inuti rutan lite andningsutrymme */
+  }
+
+  /* Separerar maträttens namn och pris så de inte krockar */
+  .item-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Lägger namnet till vänster och priset till höger */
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1em;
+    margin-top: 0;
+  }
+
+
+}

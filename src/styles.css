@@ -55,3 +55,21 @@ header li a:hover {
 header li a[style*="cursor: pointer"] {
   font-weight: bold;
 }
+
+/* --- MOBILANPASSNING FÖR MENYN --- */
+@media (max-width: 768px) {
+  
+  /* Ändrar raden till en centrerad lista på höjden */
+  header ul {
+    flex-direction: column;
+    gap: 15px; 
+    padding: 10px 0;
+  }
+
+  /* Gör länkarna lite större och block-element så de är lätta att klicka på */
+  header li a {
+    display: block;
+    font-size: 1.2em;
+    padding: 8px 15px;
+  }
+}
