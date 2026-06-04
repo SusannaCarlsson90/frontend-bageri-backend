@@ -6,10 +6,11 @@ import { Om } from './pages/om/om';
 import { Sortiment } from './pages/sortiment/sortiment';
 import { Meny } from './pages/meny/meny';
 import { Register } from './pages/register/register';
+import { authGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
   { path: "", component: Home},
-  { path: "admin", component: Admin },
+  { path: "admin", component: Admin, canActivate: [authGuard] },
   { path: "login", component: Login},
   { path: "register", component: Register },
   { path: "meny", component: Meny},

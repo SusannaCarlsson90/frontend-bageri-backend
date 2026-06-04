@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal, PLATFORM_ID } from '@angular/core';
+import { inject, Injectable, signal, computed, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Observable, tap } from 'rxjs';
 import { User } from '../interfaces/user';
@@ -11,9 +11,13 @@ import { LoginResponse } from '../interfaces/login-response';
 export class AuthService {
   private http = inject(HttpClient);
   private platformId = inject(PLATFORM_ID);
-  
+
+
   url: string = "http://localhost:3000/api";
   token = signal<string>("");
+
+  //Blir automatiskt true om token INTE är tom.
+  isLoggedIn = computed(() => this.token() !== "");
 
   constructor() {
     // Hämtar bara token om koden körs i webbläsaren efter en tråkig krasch
