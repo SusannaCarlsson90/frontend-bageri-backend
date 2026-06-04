@@ -4,6 +4,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Observable, tap } from 'rxjs';
 import { User } from '../interfaces/user';
 import { LoginResponse } from '../interfaces/login-response';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +19,7 @@ export class AuthService {
 
   //Blir automatiskt true om token INTE är tom.
   isLoggedIn = computed(() => this.token() !== "");
+  router = inject(Router);
 
   constructor() {
     // Hämtar bara token om koden körs i webbläsaren efter en tråkig krasch
@@ -41,5 +43,12 @@ export class AuthService {
         }
       })
     );
+  }
+  //Utloggning
+  logout() : void {
+    this.token.set("");
+    localStorage.removeItem("token");
+    this.router.navigate(['/']);
+
   }
 }
