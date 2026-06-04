@@ -1,1 +1,153 @@
-<p>admin works!</p>
+<h2 class="admin-title">Lägg till på menyn</h2>
+
+<form (ngSubmit)="addBakverk()" class="admin-form">
+  @if (message()) {
+    <div class="alert">
+      {{ message() }}
+    </div>
+  }
+
+  <div class="form-group">
+    <label for="title">Namn på smörgås:</label>
+    <input type="text" id="title" name="title" [(ngModel)]="title" required>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Beskrivning:</label>
+    <input type="text" id="description" name="description" [(ngModel)]="description" required>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Pris (kr):</label>
+    <input type="number" id="price" name="price" [(ngModel)]="price" required>
+  </div>
+
+  <div class="form-group">
+    <label for="category">Veckodag (t.ex. Måndag, Tisdag):</label>
+    <input type="text" id="category" name="category" [(ngModel)]="category" required>
+  </div>
+
+  <button type="submit" class="btn-submit">Spara i veckomenyn</button>
+</form>
+
+<hr class="admin-divider">
+
+<h2 class="admin-title">Hantera / Radera från veckomenyn</h2>
+
+<div class="admin-menu-list">
+  
+  <div class="admin-day-section">
+    <h3 class="admin-day-title">Måndag</h3>
+    @for (item of menuItems(); track item._id) {
+      @if (item.category.toLowerCase().trim() === 'måndag') {
+        <div class="admin-card">
+          <div class="card-info">
+            <strong>{{ item.title }}</strong> - <span class="card-price">{{ item.price }} kr</span>
+            <p>{{ item.description }}</p>
+          </div>
+          <div class="card-actions">
+            <button type="button" (click)="valjBakverkForAndring(item)" class="btn-edit">Ändra</button>
+            <button type="button" (click)="taBortBakverk(item._id)" class="btn-delete">Ta bort</button>
+          </div>
+        </div>
+      }
+    }
+  </div>
+
+  <div class="admin-day-section">
+    <h3 class="admin-day-title">Tisdag</h3>
+    @for (item of menuItems(); track item._id) {
+      @if (item.category.toLowerCase().trim() === 'tisdag') {
+        <div class="admin-card">
+          <div class="card-info">
+            <strong>{{ item.title }}</strong> - <span class="card-price">{{ item.price }} kr</span>
+            <p>{{ item.description }}</p>
+          </div>
+          <div class="card-actions">
+            <button type="button" (click)="valjBakverkForAndring(item)" class="btn-edit">Ändra</button>
+            <button type="button" (click)="taBortBakverk(item._id)" class="btn-delete">Ta bort</button>
+          </div>
+        </div>
+      }
+    }
+  </div>
+
+  <div class="admin-day-section">
+    <h3 class="admin-day-title">Onsdag</h3>
+    @for (item of menuItems(); track item._id) {
+      @if (item.category.toLowerCase().trim() === 'onsdag') {
+        <div class="admin-card">
+          <div class="card-info">
+            <strong>{{ item.title }}</strong> - <span class="card-price">{{ item.price }} kr</span>
+            <p>{{ item.description }}</p>
+          </div>
+          <div class="card-actions">
+            <button type="button" (click)="valjBakverkForAndring(item)" class="btn-edit">Ändra</button>
+            <button type="button" (click)="taBortBakverk(item._id)" class="btn-delete">Ta bort</button>
+          </div>
+        </div>
+      }
+    }
+  </div>
+
+  <div class="admin-day-section">
+    <h3 class="admin-day-title">Torsdag</h3>
+    @for (item of menuItems(); track item._id) {
+      @if (item.category.toLowerCase().trim() === 'torsdag') {
+        <div class="admin-card">
+          <div class="card-info">
+            <strong>{{ item.title }}</strong> - <span class="card-price">{{ item.price }} kr</span>
+            <p>{{ item.description }}</p>
+          </div>
+          <div class="card-actions">
+            <button type="button" (click)="valjBakverkForAndring(item)" class="btn-edit">Ändra</button>
+            <button type="button" (click)="taBortBakverk(item._id)" class="btn-delete">Ta bort</button>
+          </div>
+        </div>
+      }
+    }
+  </div>
+
+  <div class="admin-day-section">
+    <h3 class="admin-day-title">Fredag</h3>
+    @for (item of menuItems(); track item._id) {
+      @if (item.category.toLowerCase().trim() === 'fredag') {
+        <div class="admin-card">
+          <div class="card-info">
+            <strong>{{ item.title }}</strong> - <span class="card-price">{{ item.price }} kr</span>
+            <p>{{ item.description }}</p>
+          </div>
+          <div class="card-actions">
+            <button type="button" (click)="valjBakverkForAndring(item)" class="btn-edit">Ändra</button>
+            <button type="button" (click)="taBortBakverk(item._id)" class="btn-delete">Ta bort</button>
+          </div>
+        </div>
+      }
+    }
+  </div>
+
+  <div class="admin-day-section unsorted-section">
+    <h3 class="unsorted-title">Osorterat / Felstavade dagar</h3>
+    @for (item of menuItems(); track item._id) {
+      @if (
+        item.category.toLowerCase().trim() !== 'måndag' && 
+        item.category.toLowerCase().trim() !== 'tisdag' && 
+        item.category.toLowerCase().trim() !== 'onsdag' && 
+        item.category.toLowerCase().trim() !== 'torsdag' && 
+        item.category.toLowerCase().trim() !== 'fredag'
+      ) {
+        <div class="admin-card unsorted-card">
+          <div class="card-info">
+            <strong>{{ item.title }}</strong> - <span>{{ item.price }} kr</span>
+            <p class="category-feedback">Kategori i databasen: "{{ item.category }}"</p>
+          </div>
+          <div class="card-actions">
+            <button type="button" (click)="valjBakverkForAndring(item)" class="btn-edit">Ändra</button>
+            <button type="button" (click)="taBortBakverk(item._id)" class="btn-delete">Ta bort</button>
+          </div>
+        </div>
+      }
+    }
+  </div>
+
+</div>

@@ -1,17 +1,23 @@
-<h2>Registrera konto</h2>
+<div class="auth-container">
+  <h2 class="auth-title">Registrera konto</h2>
 
-<form (ngSubmit)="register()">
-  @if (message()) {
-    <div>
-      {{ message() }}
+  <form (ngSubmit)="register()" class="auth-form">
+    @if (message()) {
+      <div class="alert">
+        {{ message() }}
+      </div>
+    }
+
+    <div class="form-group">
+      <label for="username">Användarnamn</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username">
     </div>
-  }
 
-  <label for="username">Användarnamn</label>
-  <input type="text" id="username" name="username" [(ngModel)]="username">
+    <div class="form-group">
+      <label for="password">Lösenord</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password">
+    </div>
 
-  <label for="password">Lösenord</label>
-  <input type="password" id="password" name="password" [(ngModel)]="password">
-
-  <button type="submit">Registrera konto</button>
-</form>
+    <button type="submit" class="btn-auth">Registrera konto</button>
+  </form>
+</div>

@@ -1,1 +1,86 @@
-<p>meny works!</p>
+<h2 class="menu-title">Lunchmeny</h2>
+<p class="menu-subtitle">Till alla smörgåsar ingår kyld dryck, kaffe/the och nybakade kakor</p>
+
+<div class="menu-container">
+  
+  <!-- MÅNDAG -->
+  <div class="day-section">
+    <h3 class="day-title">Måndag</h3>
+    @for (item of menuItems(); track item._id) {
+      @if (item.category.toLowerCase().trim() === 'måndag') {
+        <div class="menu-item">
+          <h4 class="item-title">
+            <span>{{ item.title }}</span>
+            <span class="price">{{ item.price }} kr</span>
+          </h4>
+          <p class="item-description">{{ item.description }}</p>
+        </div>
+      }
+    }
+  </div>
+
+  <!-- TISDAG -->
+  <div class="day-section">
+    <h3 class="day-title">Tisdag</h3>
+    @for (item of menuItems(); track item._id) {
+      @if (item.category.toLowerCase().trim() === 'tisdag') {
+        <div class="menu-item">
+          <h4 class="item-title">
+            <span>{{ item.title }}</span>
+            <span class="price">{{ item.price }} kr</span>
+          </h4>
+          <p class="item-description">{{ item.description }}</p>
+        </div>
+      }
+    }
+  </div>
+
+  <!-- ONSDAG -->
+  <div class="day-section">
+    <h3 class="day-title">Onsdag</h3>
+    @for (item of menuItems(); track item._id) {
+      @if (item.category.toLowerCase().trim() === 'onsdag') {
+        <div class="menu-item">
+          <h4 class="item-title">
+            <span>{{ item.title }}</span>
+            <span class="price">{{ item.price }} kr</span>
+          </h4>
+          <p class="item-description">{{ item.description }}</p>
+        </div>
+      }
+    }
+  </div>
+
+  <!-- TORSDAG -->
+  <div class="day-section">
+    <h3 class="day-title">Torsdag</h3>
+    @for (item of menuItems(); track item._id) {
+      @if (item.category.toLowerCase().trim() === 'torsdag') {
+        <div class="menu-item">
+          <h4 class="item-title">
+            <span>{{ item.title }}</span>
+            <span class="price">{{ item.price }} kr</span>
+          </h4>
+          <p class="item-description">{{ item.description }}</p>
+        </div>
+      }
+    }
+  </div>
+
+  <!-- FREDAG -->
+  <div class="day-section">
+    <h3 class="day-title">Fredag</h3>
+    @for (item of menuItems(); track item._id) {
+      @if (item.category.toLowerCase().trim() === 'fredag') {
+        <div class="menu-item">
+          <h4 class="item-title">
+            <span>{{ item.title }}</span>
+            <span class="price">{{ item.price }} kr</span>
+          </h4>
+          <p class="item-description">{{ item.description }}</p>
+        </div>
+      }
+    }
+  </div>
+
+</div>

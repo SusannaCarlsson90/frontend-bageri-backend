@@ -1,0 +1,72 @@
+.menu-title {
+  font-family: Georgia, serif;
+  text-align: center;
+  margin-top: 40px;
+  color: #2F2219;
+  font-size: 2.5em;
+  font-weight: normal;
+}
+
+.menu-subtitle {
+  text-align: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #544338;
+  margin: -20px auto 40px auto;
+  max-width: 600px;
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.menu-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.day-section {
+  margin-bottom: 40px;
+}
+
+.day-title {
+  font-family: Georgia, serif;
+  color: #2F2219;
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.menu-item {
+  background-color: #ffffff;
+  border: 1px solid #E9D8A6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(47, 34, 25, 0.05);
+  text-align: left;
+}
+
+.item-title {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #2F2219;
+  font-size: 1.2em;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  color: #D4A373;
+  font-family: Georgia, serif;
+  font-weight: bold;
+}
+
+.item-description {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #544338;
+  font-size: 0.95em;
+  margin: 0;
+  line-height: 1.4;
+}
