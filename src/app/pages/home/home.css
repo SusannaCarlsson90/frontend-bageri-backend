@@ -1,0 +1,113 @@
+/* Hero-sektionen (Stor bild över hela skärmen) */
+.hero-section {
+  background-image: url('/bageribild.jpg'); /* Byt ut mot din bild */
+  background-size: cover;
+  background-position: center;
+  height: 60vh; /* Tar upp 60% av skärmens höjd */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mörkt filter över bilden så att texten syns tydligt */
+.hero-overlay {
+  background-color: rgba(47, 34, 25, 0.4); /* Mjuk kaffebrun genomskinlighet */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.hero-title {
+  font-family: Georgia, serif;
+  color: #ffffff;
+  font-size: 3.5em;
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #ffffff;
+  font-size: 1.3em;
+  font-style: italic;
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Behållare för rutorna */
+.home-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+/* Grid-layout för att placera rutorna sida vid sida */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* Styling för navigeringsrutorna */
+.nav-card {
+  text-decoration: none; /* Tar bort understreck på länken */
+  background-color: #ffffff;
+  border: 1px solid #E9D8A6;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(47, 34, 25, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+/* Hover-effekt (Rutan lyfts lite när man håller musen över) */
+.nav-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(47, 34, 25, 0.1);
+  border-color: #D4A373;
+}
+
+.card-content h3 {
+  font-family: Georgia, serif;
+  color: #2F2219;
+  font-size: 1.8em;
+  margin: 0 0 10px 0;
+}
+
+.card-content p {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #544338;
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0 0 15px 0;
+}
+
+.card-link-text {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #D4A373;
+  font-weight: bold;
+  font-size: 0.95em;
+  transition: color 0.2s;
+}
+
+.nav-card:hover .card-link-text {
+  color: #2F2219;
+}
+
+/* Responsivitet: På mobiler staplas rutorna på höjden istället */
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 2.5em;
+  }
+}

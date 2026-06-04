@@ -1,0 +1,91 @@
+.sortiment-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.sortiment-title {
+  font-family: Georgia, serif;
+  color: #2F2219;
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.sortiment-subtitle {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #544338;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 30px; 
+  justify-items: center;
+}
+
+/* Varje produktkort */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px; /* Förhindrar att korten blir gigantiska på stora skärmar */
+}
+
+/* Behållare som tvingar bilden att bli en perfekt kvadrat */
+.image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Gör rutan helt kvadratisk */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 15px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Beskär bilden snyggt till en kvadrat */
+  transition: transform 0.3s ease;
+}
+
+/* Liten hover-effekt på bilden */
+.product-card:hover .image-container img {
+  transform: scale(1.03);
+}
+
+/* Rundad etikettknapp undertill */
+.product-btn {
+  background-color: #E9D8A6; 
+  color: #2F2219;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s, transform 0.2s;
+  min-width: 180px; 
+  text-align: center;
+}
+
+.product-btn:hover {
+  background-color: #D4A373; 
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Responsivitet för mindre skärmar ( */
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* Blir en kolumn på mobilen */
+    gap: 35px;
+  }
+}

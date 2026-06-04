@@ -1,0 +1,51 @@
+/* --- FOOTER STYLING --- */
+.cafe-footer {
+  background-color: #2F2219; /* Mörkt kaffebrun */
+  color: #FAF6EE; /* Mjuk beige text */
+  padding: 20px 0;
+  margin-top: 60px; /* Skapar luft mellan sidans innehåll och footern */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9em;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1000px; 
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.footer-links a {
+  color: #FAF6EE;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+
+.footer-links .admin-link {
+  color: #D4A373; 
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* Responsivt för mindre skärmar  */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
