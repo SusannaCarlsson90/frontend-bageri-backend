@@ -89,10 +89,10 @@
   /* Fixar rutan för själva maträtten så den inte blir så extremt smal */
   .menu-item {
     width: 100%;
-    max-width: 1000px; /* Tillåter den att sträcka ut sig */
+    max-width: 1000px; 
     box-sizing: border-box;
     margin: 0 auto 15px auto;
-    padding: 15px; /* Ger texten inuti rutan lite andningsutrymme */
+    padding: 15px; 
   }
 
   /* Separerar maträttens namn och pris så de inte krockar */

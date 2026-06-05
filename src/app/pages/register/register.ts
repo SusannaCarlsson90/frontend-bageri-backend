@@ -24,7 +24,7 @@ export class Register {
 
     this.authService.register(user).subscribe({
       next: (res: any) => {
-      this.message.set(res.message || "Konto skapat!"),
+      this.message.set(res.message || "Konto skapat!");
       this.password = "";
       this.username = "";
       },

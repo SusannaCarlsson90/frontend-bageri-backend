@@ -1,6 +1,6 @@
 /* Hero-sektionen (Stor bild över hela skärmen) */
 .hero-section {
-  background-image: url('/bageribild.jpg'); /* Byt ut mot din bild */
+  background-image: url('/bageribild.jpg'); 
   background-size: cover;
   background-position: center;
   height: 60vh; /* Tar upp 60% av skärmens höjd */

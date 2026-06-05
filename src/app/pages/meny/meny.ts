@@ -17,7 +17,7 @@ export class Meny implements OnInit {
   ngOnInit(): void {
     this.menuService.getMenuItems().subscribe({
       next: (data) => {
-        this.menuItems.set(data); //Använd .set() för att spara datan
+        this.menuItems.set(data); //Använder .set() för att spara datan
       },
       error: (err) => {
         console.error('Kunde inte hämta menyn:', err);

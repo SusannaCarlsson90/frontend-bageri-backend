@@ -82,7 +82,7 @@
   transform: translateY(-1px);
 }
 
-/* Responsivitet för mindre skärmar ( */
+/* Responsivitet för mindre skärmar */
 @media (max-width: 600px) {
   .product-grid {
     grid-template-columns: 1fr; /* Blir en kolumn på mobilen */
